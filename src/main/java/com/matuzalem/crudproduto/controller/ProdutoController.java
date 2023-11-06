@@ -6,6 +6,8 @@ import com.matuzalem.crudproduto.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("produto")
 public class ProdutoController {
@@ -14,14 +16,26 @@ public class ProdutoController {
     private ProdutoService produtoService;
 
     @GetMapping
-    public String primeiroMetodo(){
-        return produtoService.pimeiroMetodoService();
+    public List<ProdutoDto> listar(){
+        return produtoService.listar();
     }
 
     @PostMapping
     public String save(@RequestBody ProdutoDto produtoDto){
-        String retorno = produtoService.save(produtoDto);
+        String retorno = produtoService.salvar(produtoDto);
         return retorno;
     }
+
+    @PutMapping
+    public String alterar(@RequestBody ProdutoDto produtoDto){
+        String retorno = produtoService.alterar(produtoDto);
+        return retorno;
+    }
+    @DeleteMapping
+    public String apagar(@RequestBody ProdutoDto produtoDto){
+        String retorno = produtoService.apagar(produtoDto);
+        return retorno;
+    }
+
 }
 
