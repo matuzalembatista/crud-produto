@@ -11,7 +11,6 @@ public class ProdutoService {
     @Autowired
     private ProdutoRepository produtoRepository;
     public String pimeiroMetodoService(){
-
         return "Aqui eh service";
     }
 
