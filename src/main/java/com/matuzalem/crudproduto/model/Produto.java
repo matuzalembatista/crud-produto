@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 public class Produto {
     @Id
     @Column(name = "idproduto")
-    private Long id;
+    private int id;
 
     @Column (name = "nome_produto")
     private String nome;
@@ -18,11 +18,11 @@ public class Produto {
     @Column
     private double valor;
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 

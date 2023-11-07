@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("produto")
+@RequestMapping
 public class ProdutoController {
 
     @Autowired
@@ -21,9 +21,8 @@ public class ProdutoController {
     }
 
     @PostMapping
-    public String save(@RequestBody ProdutoDto produtoDto){
-        String retorno = produtoService.salvar(produtoDto);
-        return retorno;
+    public String salvar(@RequestBody ProdutoDto produtoDto){
+        return produtoService.salvar(produtoDto);
     }
 
     @PutMapping

@@ -32,7 +32,6 @@ public class ProdutoService {
 
     public String salvar(ProdutoDto produtoDto){
         Produto produto = new Produto();
-        produto.setId(produtoDto.getId());
         produto.setNome(produtoDto.getNome());
         produto.setValor(produtoDto.getValor());
 
